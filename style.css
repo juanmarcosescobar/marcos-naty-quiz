@@ -1,0 +1,125 @@
+/* Estilo de la página */
+body {
+    background-color: #111; /* Fondo oscuro */
+    background-image: linear-gradient(to right, #111, #333); /* Efecto de gradiente */
+    font-family: "Press Start 2P", monospace; /* Cambiamos la fuente */
+    text-align: center;
+    padding: 20px;
+    overflow: hidden;
+    animation: backgroundAnimation 15s infinite linear; /* Animación del fondo */
+}
+
+/* Fondo animado */
+@keyframes backgroundAnimation {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+/* Estilo de la terminal */
+.terminal {
+    width: 80%;
+    max-width: 700px;
+    height: 400px;
+    background-color: black;
+    border: 3px solid #00ff00;
+    border-radius: 15px; /* Bordes redondeados */
+    padding: 20px;
+    margin: auto;
+    text-align: left;
+    overflow-y: auto;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.7); /* Sombra verde */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Aseguramos que el contenido se alinee hacia abajo */
+}
+
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 18px;
+    color: #00ff00; /* Color verde brillante */
+    margin: 0; /* Eliminamos márgenes innecesarios */
+    padding: 0; /* Eliminamos relleno innecesario */
+    overflow-y: auto; /* Permitimos desplazamiento vertical */
+}
+
+/* Estilo del input */
+input {
+    width: 100%;
+    background: black;
+    color: #00ff00;
+    border: none;
+    font-size: 18px;
+    font-family: "Courier New", monospace;
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+}
+
+input:focus {
+    background-color: #222;
+}
+
+/* Estilo para las opciones de respuesta */
+button.opcion {
+    background-color: #00ff00;
+    color: black;
+    border: 1px solid #00ff00;
+    padding: 12px 20px;
+    margin: 10px;
+    font-family: "Courier New", monospace;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.7); /* Sombra en los botones */
+    transform: scale(1);
+    transition: transform 0.2s ease-in-out;
+}
+
+button.opcion:hover {
+    background-color: #00cc00;
+    transform: scale(1.1); /* Botón aumenta de tamaño al pasar el mouse */
+}
+
+button#no {
+    animation: moveButton 2s infinite alternate;
+    margin-top: 20px;
+}
+
+/* Animación para mover el botón "No" */
+@keyframes moveButton {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(20px);
+    }
+}
+
+/* Efecto de parpadeo para los textos */
+@keyframes textoParpadeo {
+    0% { color: #00ff00; }
+    50% { color: #fff; }
+    100% { color: #00ff00; }
+}
+
+pre.blink {
+    animation: textoParpadeo 1s infinite;
+}
+
+#chat-container {
+    width: 100%;
+    height: 400px; /* O el tamaño que prefieras */
+    overflow-y: auto;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    scroll-behavior: smooth; /* Desplazamiento suave */
+  }
